@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.shortcuts import HttpResponse
 from .models import News
 from .forms import RegistrationForm
 from .models import RegistrationData
@@ -45,6 +44,7 @@ def register(request):
 
     context = {
         "form":RegistrationForm
+
     }
 
     return render(request, 'signup.html', context)
@@ -64,6 +64,6 @@ def addUser(request):
 
         myregister.save()
 
-    return render_to_response('signup.html', { form:form}, myregister=RequestContext(request))
+
     return redirect('home')
 
