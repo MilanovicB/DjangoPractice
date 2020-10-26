@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %} Registration {% endblock title %}
 
 {% block body %}
@@ -13,13 +13,35 @@
         {% csrf_token %}
 
 
-    {{ form.as_p }}
+    <form>
+     <div class="form-group">
+        <label for="">Username</label>
+        <input type="email" class="form-control" placeholder="Enter your username" id="inputMail" aria-label="Username">
+        <small id="username" class="text"></small>
+     {{ forms.username }}
+<! -- *** adding custom forms from the forms.py where all attributes of here stated we transfer in a shape of "widget" *** -->
 
-    <input type="submit" value="Register" class="btn btn-success">
 
-
+    <div class="form-group">
+         <label for="InputPassword">Password</label>
+         <input type="password" class="form-control" placeholder="Enter your password" id="InputPassword" aria-label="Password">
+    </div>
+    <div class="form-group">
+        <label for="">Email</label>
+        <input type="email" class="form-control" placeholder="Enter your email" id="inputMail" aria-label="Email" >
+        <small id="emailHelp" class="form-text text-muted">We will never share your email in public!</small>
+    </div>
+ <div class="form-group">
+        <label for="">Phone</label>
+        <input type="text" class="form-control" placeholder="Enter your phone" id="inputPhone" aria-label="Phone" >
+        <small id="phoneHelp" class="form-text text-muted">We will never share your phone in public!</small>
+    </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+     </div>
 
     </form>
+
+     </form>
 
 </div>
 
